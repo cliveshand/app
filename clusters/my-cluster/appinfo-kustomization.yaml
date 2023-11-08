@@ -10,7 +10,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: app
+    name: podinfo
   targetNamespace: default
 
   patches:
@@ -18,11 +18,11 @@ spec:
         apiVersion: autoscaling/v2
         kind: HorizontalPodAutoscaler
         metadata:
-          name: app
+          name: podinfo
         spec:
           minReplicas: 2            
           maxReplicas: 3   
       target:
-        name: app
+        name: podinfo
         kind: HorizontalPodAutoscaler
 
